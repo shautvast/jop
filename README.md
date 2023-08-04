@@ -19,3 +19,4 @@ cargo run outfile
 ```
 
 * tested on jdk20/G1 collector
+* depends on tail command, so works best on linux/unix/macos
