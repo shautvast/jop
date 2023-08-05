@@ -20,3 +20,8 @@ cargo run outfile
 
 * tested on jdk20/G1 collector
 * depends on tail command, so works best on linux/unix/macos
+
+![how it looks](screencast.gif)
+
+[GREEN] heap size before garbage collection
+[RED] heapsize after garbage collection
