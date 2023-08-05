@@ -4,6 +4,7 @@
 
 * Simple commandline utility that parses the output of java verbose gc and plots it in a graph
 * Can be used for tailing the file, or on historic files
+* Written in rust. Executable size (release) 2Mb.
 * Sample usage:
 
 ```bash
