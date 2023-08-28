@@ -29,7 +29,7 @@ fn main() {
     }).unwrap();
 
     let mut cmd = Command::new("tail")
-        .args(&["-f", "-n", "+1", &filename])
+        .args(["-f", "-n", "+1", &filename])
         .stdin(Stdio::null())
         .stdout(Stdio::piped())
         .stderr(Stdio::null())
@@ -45,9 +45,9 @@ fn main() {
         reader.read_line(&mut line).unwrap();
         let parsed_line = jop::parse(&line);
         if let Some(l) = parsed_line {
-            points_after.push((l.ts.clone(), l.used_after as f32));
+            points_after.push((l.ts, l.used_after as f32));
             points_before.push((l.ts, l.used_before as f32));
-            let max_ts = points_after.last().unwrap().0.clone();
+            let max_ts = points_after.last().unwrap().0;
 
             term.move_cursor_to(0, 0).unwrap();
             Chart::new_with_y_range(200, 100, 0., max_ts, 0.0, l.total_memory as f32)

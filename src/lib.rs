@@ -14,7 +14,7 @@ pub struct GcLine {
 }
 
 static GC: Lazy<Regex> = Lazy::new(|| {
-    Regex::new(r#"\[(\d+\.\d+)(.)]\[info]\[gc].+?\s(\d+)(.)->(\d+)(.)\((\d+)(.)\)\s(\d+\.\d+)(.+)"#).unwrap()
+    Regex::new(r"\[(\d+\.\d+)(.)]\[info]\[gc].+?\s(\d+)(.)->(\d+)(.)\((\d+)(.)\)\s(\d+\.\d+)(.+)").unwrap()
 });
 
 pub fn parse(line_str: &str) -> Option<GcLine> {
